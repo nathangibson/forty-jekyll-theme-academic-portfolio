@@ -13,9 +13,21 @@ zip_code: 55555
 country: United States of America
 phone: (716) 555-5555
 
+permalink: pretty
+
+collections: 
+  j:
+    output: true
+  w:
+    output: true
+
 # homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-source: # accepts "posts," "pages," or anything specified as a collection in config.yml.
+# These must also be added in the tiles.html template.
+  - w
+  - posts
+  - j
+tiles-count: 20
 
 # social settings (key must match name of font awesome icon)
 # see https://fontawesome.com/icons?d=gallery&p=2&s=brands
