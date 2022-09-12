@@ -21,6 +21,12 @@ collections:
   w:
     output: true
 
+defaults:
+  - scope:
+      type: w
+    values:
+      layout: w
+
 # homepage tiles
 tiles-source: # accepts "posts," "pages," or anything specified as a collection in config.yml.
 # These must also be added in the tiles.html template.

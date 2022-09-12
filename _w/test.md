@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Writing 1
 description: Feugiat amet tempus
 image: assets/images/pic06.jpg
