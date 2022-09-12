@@ -175,3 +175,10 @@
 	.align-right {
 		text-align: right;
 	}
+
+	.body-text > p:first-of-type:first-letter {
+		float: left;
+		font-size: $drop-cap-size;
+		padding-top: $drop-cap-padding-top;
+		padding-right: $drop-cap-padding-right;
+	}

@@ -28,6 +28,10 @@
 		letter-spacing-alt:	0.25em
 	);
 
+	$drop-cap-size: 4rem;
+	$drop-cap-padding-top: $drop-cap-size * .15;
+	$drop-cap-padding-right: $drop-cap-size * .15;
+
 // Palette.
 	$palette: (
 		bg:					#242943,
