@@ -39,13 +39,13 @@ class Kramdown::Converter::Html
             end
           end
 
-          ol.children << Kramdown::Element.new(:raw, convert(li, 4))
+          ol.children << Kramdown::Element.new(:raw, convert(li, 4)) # Actually creates li elements
           i += 1
         end
         if ol.children.empty?
           ''
         else
-          format_as_indented_block_html('div', {class: "footnotes", role: "doc-endnotes"}, convert(ol, 2), 0)
+          format_as_indented_block_html('div', {class: "footnotes side-notes", role: "doc-endnotes"}, convert(ol, 2), 0)
         end
     end
 end

@@ -5,18 +5,13 @@ image: assets/images/pic06.jpg
 ---
 {% include toc.html %}
 
-Donec eget ex magna.[^1] Interdum et malesuada fames ac ante ipsum primis in faucibus.[<sup>2</sup>](#fn:2) Pellentesque venenatis dolor imperdiet dolor mattis sagittis.
+Donec eget ex magna.[^1] Interdum et malesuada fames ac ante ipsum primis in faucibus.[^2] Pellentesque venenatis dolor imperdiet dolor mattis sagittis.
 Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. 
 Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. 
 Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.
 
-<sup>2</sup>A footnote.
-<sup>3</sup>A footnote.
-<sup>4</sup>A footnote.
-{: #fn:2 .side-notes }
-
 [^1]: This is the first footnote.
-{: .side-notes }
+[^2]: This is the second footnote.
 
 Notes
 {: .side-notes }

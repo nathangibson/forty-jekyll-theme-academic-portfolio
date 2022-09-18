@@ -11,7 +11,7 @@
 position: relative;
 }
 
-.long-text p,h1,h2,h3,h4,h5,h6 {
+.long-text p:not(.side-notes),h1,h2,h3,h4,h5,h6 {
     width: 40em;
 }
 
