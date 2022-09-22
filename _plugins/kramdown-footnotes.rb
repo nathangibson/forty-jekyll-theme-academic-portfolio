@@ -48,4 +48,40 @@ class Kramdown::Converter::Html
           format_as_indented_block_html('div', {class: "footnotes side-notes", role: "doc-endnotes"}, convert(ol, 2), 0)
         end
     end
+
+    
+
+  # File lib/kramdown/converter/html.rb, line 371
+  def convert_root(el, indent)
+    result = inner(el, indent)
+    # query = result.scan(/<p.*?<\/p>|<h\d.*?<\/h\d>/m)
+    if @footnote_location
+      result.sub!(/#{@footnote_location}/, footnote_content.gsub(/\\/, "\\\\\\\\"))
+    else
+      result << footnote_content
+    end
+    if @toc_code
+      toc_tree = generate_toc_tree(@toc, @toc_code[0], @toc_code[1] || {})
+      text = if !toc_tree.children.empty?
+              convert(toc_tree, 0)
+            else
+              ''
+            end
+      result.sub!(/#{@toc_code.last}/, text.gsub(/\\/, "\\\\\\\\"))
+    end
+    # need to take care of numbering and multiple footnotes per paragraph
+    # Also substitute in any variables and make readable.
+    # Or use .scan with arrays and regex groups to get it
+    # result.gsub(/(fn:(\d+).*?<\/(p|h\d)>)/m,'\1'+'<ol class="side-notes">'+footnote_content.scan(/<li id=.*?<\/li>/m)['\2'.to_i].to_s+'</ol>')
+    before_footnote = '^(.*?(?=fn:))?'
+    between_footnotes = '(fn:(\d+).*?(?=fn:))' # How to allow multiple? * doesn't seem to work
+    after_footnote = '(fn:(\d+).*?<\/[ph]\d?>)' # How to allow multiple? * doesn't seem to work
+    any = '(.+)'
+    text_by_footnotes = result.scan(/#{before_footnote}#{between_footnotes}#{after_footnote}#{any}/m)
+    start_tree = '(<div.*?<ol>\s+)'
+    footnote = '(<li.*?fn:(\d+).*?<\/li>\s*)*'
+    footnotes_split = footnote_content.scan(/#{start_tree}#{footnote}/m)
+    result + text_by_footnotes.to_s + footnotes_split.to_s
+  end
+
 end

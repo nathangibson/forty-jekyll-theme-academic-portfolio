@@ -13,10 +13,9 @@ Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellen
 [^1]: This is the first footnote.
 [^2]: This is the second footnote.
 
-Notes
-{: .side-notes }
+## Header 2[^3]
 
-## Header 2
+[^3]: This is the third footnote.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. 
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. 
@@ -24,9 +23,6 @@ Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condi
 Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. 
 Pellentesque aliquam maximus risus, vel sed vehicula.
-
-Test
-{: .side-notes }
 
 ### Header 2.1
 Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. 

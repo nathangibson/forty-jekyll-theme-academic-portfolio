@@ -51,6 +51,9 @@ socials:
 
 # build settings
 markdown: kramdown
+kramdown: 
+  parse_block_html: "true"
+  # footnote_backlink_inline: "true"
 
 sass:
   style: compressed
