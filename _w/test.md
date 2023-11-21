@@ -18,11 +18,13 @@ Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellen
 [^3]: This is the third footnote.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. 
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum.[^4] 
 Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
 Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. 
 Pellentesque aliquam maximus risus, vel sed vehicula.
+
+[^4]: This is the 4th footnote.
 
 ### Header 2.1
 Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. 

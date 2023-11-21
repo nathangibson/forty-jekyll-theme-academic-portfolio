@@ -75,13 +75,16 @@ class Kramdown::Converter::Html
     # result.gsub(/(fn:(\d+).*?<\/(p|h\d)>)/m,'\1'+'<ol class="side-notes">'+footnote_content.scan(/<li id=.*?<\/li>/m)['\2'.to_i].to_s+'</ol>')
     before_footnote = '^(.*?(?=fn:))?'
     between_footnotes = '(fn:(\d+).*?(?=fn:))' # How to allow multiple? * doesn't seem to work
-    after_footnote = '(fn:(\d+).*?<\/[ph]\d?>)' # How to allow multiple? * doesn't seem to work
+    # after_footnote = '(fn:(\d+).*?<\/[ph]\d?>)' # How to allow multiple? * doesn't seem to work
+    after_footnote = '(fn:(\d+).*?(?=(fn:)|(<\/[ph]\d?>)))'
     any = '(.+)'
-    text_by_footnotes = result.scan(/#{before_footnote}#{between_footnotes}#{after_footnote}#{any}/m)
+    text_by_footnotes = result.scan(/#{after_footnote}/m) rescue nil
+    # text_by_footnotes = result.scan(/#{before_footnote}#{between_footnotes}#{after_footnote}#{any}/m)
     start_tree = '(<div.*?<ol>\s+)'
     footnote = '(<li.*?fn:(\d+).*?<\/li>\s*)*'
     footnotes_split = footnote_content.scan(/#{start_tree}#{footnote}/m)
-    result + text_by_footnotes.to_s + footnotes_split.to_s
+    test_array = text_by_footnotes[0]
+    result + test_array[0].to_s if test_array
   end
 
 end
